@@ -14,6 +14,7 @@ void imprimirSimbolo() {
 void imprmirAyuda(){
   cout<<"estas son las funciones comunes que acepta la terminal de control:"<<endl;
   cout<< "alopolisia" <<endl;
+  cout<< "superdupermegaopcion en un nuevo branch" <<endl;
 }
 
 //Prueba
