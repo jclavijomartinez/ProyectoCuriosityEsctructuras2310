@@ -25,22 +25,46 @@ int main() {
     imprimirSimbolo();
     getline(std::cin, input);
     
-    switch (str2int(input))
-    {
-    case 'cargar_comandos'/* constant-expression */: //cargar_comandos nombre_archivo
-      /* code */
-
-
-      break;
-    
-    case 'cargar_elementos'/* constant-expression */: //cargar_elementos nombre_archivo
-      /* code */
-
-      
-      break;
-
-    default:
-      break;
+    switch (input[0]) {
+        case 'c':
+            if (input == "cargar_comandos") {
+                cout << "Opción elegida: cargar_comandos" << endl;
+            } else if (input == "cargar_elementos") {
+                cout << "Opción elegida: cargar_elementos" << endl;
+            } else {
+                cout << "Opción inválida" << endl;
+            }
+            break;
+        case 'a':
+            if (input == "agregar_movimiento") {
+                cout << "Opción elegida: agregar_movimiento" << endl;
+            } else if (input == "agregar_analisis") {
+                cout << "Opción elegida: agregar_analisis" << endl;
+            } else if (input == "agregar_elemento") {
+                cout << "Opción elegida: agregar_elemento" << endl;
+            } else {
+                cout << "Opción inválida" << endl;
+            }
+            break;
+        case 'g':
+            if (input == "guardar") {
+                cout << "Opción elegida: guardar" << endl;
+            } else {
+                cout << "Opción inválida" << endl;
+            }
+            break;
+        case 's':
+            if (input == "simular_comandos") {
+                cout << "Opción elegida: simular_comandos" << endl;
+            } else if (input == "salir") {
+                cout << "Opción elegida: salir" << endl;
+            } else {
+                cout << "Opción inválida" << endl;
+            }
+            break;
+        default:
+            cout << "Opción inválida" << endl;
+            break;
     }
     if (input == "exit") {
       break;
