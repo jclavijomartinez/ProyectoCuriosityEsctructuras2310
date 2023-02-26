@@ -27,12 +27,12 @@ int main() {
     
     switch (input[0]) {
         case 'c':
-             if (opcion.substr(0, 14) == "cargar_comandos") {
-                string nombre_archivo = opcion.substr(15);
+             if (input.substr(0, 14) == "cargar_comandos") {
+                string nombre_archivo = input.substr(15);
                 cout << "Opción elegida: cargar_comandos" << endl;
                 cout << "Nombre de archivo: " << nombre_archivo << endl;
-            } else if (opcion.substr(0, 15) == "cargar_elementos") {
-                string nombre_archivo = opcion.substr(16);
+            } else if (input.substr(0, 15) == "cargar_elementos") {
+                string nombre_archivo = input.substr(16);
                 cout << "Opción elegida: cargar_elementos" << endl;
                 cout << "Nombre de archivo: " << nombre_archivo << endl;
             } else {
@@ -40,10 +40,10 @@ int main() {
             }
             break;
         case 'a':
-             if (opcion.substr(0, 17) == "agregar_movimiento") {
-                char tipo_movimiento = opcion[18];
-                double magnitud = stod(opcion.substr(20, opcion.find(" ", 20) - 20));
-                char unidad = opcion[opcion.find(" ", 20) + 1];
+             if (input.substr(0, 17) == "agregar_movimiento") {
+                char tipo_movimiento = input[18];
+                double magnitud = stod(input.substr(20, input.find(" ", 20) - 20));
+                char unidad = input[input.find(" ", 20) + 1];
 
                 cout << "Opción elegida: agregar_movimiento" << endl;
 
@@ -65,37 +65,66 @@ int main() {
                 cout << "Tipo de movimiento: " << tipo_movimiento << endl;
                 cout << "Magnitud: " << magnitud << endl;
                 cout << "Unidad de medida: " << unidad << endl;
-            } else if (opcion == "agregar_analisis") {
+            }  else if (input.substr(0, 16) == "agregar_analisis") {
+                char tipo_analisis = input[17];
+                char objeto_analisis = input[19];
+                string comentario = input.substr(input.find(" ", 20) + 1);
+
                 cout << "Opción elegida: agregar_analisis" << endl;
-            } else if (opcion == "agregar_elemento") {
+
+                if (tipo_analisis != 'f' && tipo_analisis != 'c' && tipo_analisis != 'p') {
+                    cout << "Tipo de análisis inválido" << endl;
+                    break;
+                }
+
+                if (objeto_analisis != 'r' && objeto_analisis != 'a' && objeto_analisis != 'm') {
+                    cout << "Objeto de análisis inválido" << endl;
+                    break;
+                }
+
+                cout << "Tipo de análisis: " << tipo_analisis << endl;
+                cout << "Objeto de análisis: " << objeto_analisis << endl;
+                cout << "Comentario: " << comentario << endl;
+            } else if (input == "agregar_elemento") {
                 cout << "Opción elegida: agregar_elemento" << endl;
-            } else if (opcion == "ayuda") {
-                cout << "Opciones válidas en el caso 'a':" << endl;
-                cout << "  agregar_movimiento" << endl;
-                cout << "  agregar_analisis" << endl;
-                cout << "  agregar_elemento" << endl;
+            } else if (input == "ayuda") {
+                
+                cout << "Comándos válidos :" << endl;
+                cout << "  cargar_comandos nombre_archivo" << endl;
+                cout << "  cargar_elementos nombre_archivo" << endl;
+                cout << "  agregar_movimiento tipo_mov magnitud unidad_med" << endl;
+                cout << "  agregar_analisis tipo_analisis objeto comentario" << endl;
+                cout << "  agregar_elemento tipo_comp tamaño unidad_med coordX coordY" << endl;
+                cout << "  guardar tipo_archivo nombre_archivo" << endl;
+                cout << "  simular_comandos coordX coordY" << endl;
+                cout << "  salir" << endl;
+                
+                
+
             } else {
                 cout << "Opción inválida" << endl;
             }
             break;
+
         case 'g':
+
             if (input == "guardar") {
-                cout << "Opcion elegida: guardar" << endl;
+                cout << "input elegida: guardar" << endl;
             } else {
-                cout << "Opcion invalida" << endl;
+                cout << "input invalida" << endl;
             }
             break;
         case 's':
             if (input == "simular_comandos") {
-                cout << "Opcion elegida: simular_comandos" << endl;
+                cout << "input elegida: simular_comandos" << endl;
             } else if (input == "salir") {
-                cout << "Opcion elegida: salir" << endl;
+                cout << "input elegida: salir" << endl;
             } else {
-                cout << "Opcion invalida" << endl;
+                cout << "input invalida" << endl;
             }
             break;
         default:
-            cout << "Opcion invalida" << endl;
+            cout << "input invalida" << endl;
             break;
     }
     if (input == "exit") {
