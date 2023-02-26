@@ -27,23 +27,55 @@ int main() {
     
     switch (input[0]) {
         case 'c':
-            if (input == "cargar_comandos") {
-                cout << "Opcion elegida: cargar_comandos" << endl;
-            } else if (input == "cargar_elementos") {
-                cout << "Opcion elegida: cargar_elementos" << endl;
+             if (opcion.substr(0, 14) == "cargar_comandos") {
+                string nombre_archivo = opcion.substr(15);
+                cout << "Opción elegida: cargar_comandos" << endl;
+                cout << "Nombre de archivo: " << nombre_archivo << endl;
+            } else if (opcion.substr(0, 15) == "cargar_elementos") {
+                string nombre_archivo = opcion.substr(16);
+                cout << "Opción elegida: cargar_elementos" << endl;
+                cout << "Nombre de archivo: " << nombre_archivo << endl;
             } else {
-                cout << "Opcion invalida" << endl;
+                cout << "Opción inválida" << endl;
             }
             break;
         case 'a':
-            if (input == "agregar_movimiento") {
-                cout << "Opcion elegida: agregar_movimiento" << endl;
-            } else if (input == "agregar_analisis") {
-                cout << "Opcion elegida: agregar_analisis" << endl;
-            } else if (input == "agregar_elemento") {
-                cout << "Opcion elegida: agregar_elemento" << endl;
+             if (opcion.substr(0, 17) == "agregar_movimiento") {
+                char tipo_movimiento = opcion[18];
+                double magnitud = stod(opcion.substr(20, opcion.find(" ", 20) - 20));
+                char unidad = opcion[opcion.find(" ", 20) + 1];
+
+                cout << "Opción elegida: agregar_movimiento" << endl;
+
+                if (tipo_movimiento != 'a' && tipo_movimiento != 'g') {
+                    cout << "Tipo de movimiento inválido" << endl;
+                    break;
+                }
+
+                if (magnitud <= 0 || magnitud > 100) {
+                    cout << "Magnitud inválida" << endl;
+                    break;
+                }
+
+                if (unidad != 'c' && unidad != 'm' && unidad != 'g') {
+                    cout << "Unidad de medida inválida" << endl;
+                    break;
+                }
+
+                cout << "Tipo de movimiento: " << tipo_movimiento << endl;
+                cout << "Magnitud: " << magnitud << endl;
+                cout << "Unidad de medida: " << unidad << endl;
+            } else if (opcion == "agregar_analisis") {
+                cout << "Opción elegida: agregar_analisis" << endl;
+            } else if (opcion == "agregar_elemento") {
+                cout << "Opción elegida: agregar_elemento" << endl;
+            } else if (opcion == "ayuda") {
+                cout << "Opciones válidas en el caso 'a':" << endl;
+                cout << "  agregar_movimiento" << endl;
+                cout << "  agregar_analisis" << endl;
+                cout << "  agregar_elemento" << endl;
             } else {
-                cout << "Opcion invalida" << endl;
+                cout << "Opción inválida" << endl;
             }
             break;
         case 'g':
