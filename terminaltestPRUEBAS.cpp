@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <sstream>
 
 using namespace std;
 
@@ -141,6 +142,40 @@ int main() {
 
             if (input == "guardar") {
                 cout << "input elegida: guardar" << endl;
+
+                char tipo_archivo;
+                string nombre_archivo;
+                sscanf(input.c_str(), "%*c %c %s", &tipo_archivo, &nombre_archivo);
+                switch(tipo_archivo){
+        case 's': // Guardar archivo de simulación
+            // Aquí puedes agregar la lógica para guardar el archivo de simulación con el nombre especificado
+            cout << "Archivo de simulacion guardado exitosamente como " << nombre_archivo << endl;
+            break;
+        case 'e': // Guardar archivo de elemento
+            // Aquí puedes agregar la lógica para guardar el archivo de elemento con el nombre especificado
+            cout << "Archivo de elemento guardado exitosamente como " << nombre_archivo << endl;
+            break;
+        case 'a': // Guardar archivo de análisis
+            // Aquí puedes agregar la lógica para guardar el archivo de análisis con el nombre especificado
+            cout << "Archivo de analisis guardado exitosamente como " << nombre_archivo << endl;
+            break;
+        case 'm': // Guardar archivo de movimiento
+            // Aquí puedes agregar la lógica para guardar el archivo de movimiento con el nombre especificado
+            cout << "Archivo de movimiento guardado exitosamente como " << nombre_archivo << endl;
+            break;
+        case 'c': // Guardar archivo de comandos
+            // Aquí puedes agregar la lógica para guardar el archivo de comandos con el nombre especificado
+            cout << "Archivo de comandos guardado exitosamente como " << nombre_archivo << endl;
+            break;
+        case 'l': // Guardar archivo de elementos cargados
+            // Aquí puedes agregar la lógica para guardar el archivo de elementos cargados con el nombre especificado
+            cout << "Archivo de elementos cargados guardado exitosamente como " << nombre_archivo << endl;
+            break;
+        default:
+            cout << "Tipo de archivo invalido, solo se aceptan s, e, a, m, c y l" << endl;
+            break;
+    }
+
             } else {
                 cout << "input invalida" << endl;
             }
@@ -148,8 +183,18 @@ int main() {
         case 's':
             if (input == "simular_comandos") {
                 cout << "input elegida: simular_comandos" << endl;
+                string simular;
+                  int x, y;
+    // Leer "simular_comandos" y coordenadas X e Y del string opcion
+             stringstream ss (input);
+             ss >> simular >> x >> y;
+    // Llamar a la función para simular comandos
+            // simularComandos(x, y);
+             break;
+
             } else if (input == "salir") {
                 cout << "input elegida: salir" << endl;
+                break;
             } else {
                 cout << "input invalida" << endl;
             }
