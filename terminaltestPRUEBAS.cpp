@@ -130,10 +130,7 @@ int main() {
     if (input == "exit") {
       break;
     }
-    if (input == "ayuda") {
-      cout<<"Bienvenido al controlador! en esta seccion puedes encontrar todas las funciones, proximamente";
-      break;
-    }
+    
   }
   return 0;
 }
