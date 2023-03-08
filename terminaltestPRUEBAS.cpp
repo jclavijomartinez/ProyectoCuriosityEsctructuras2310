@@ -32,11 +32,14 @@ int main() {
                 string nombre_archivo = input.substr(15);
                 cout << "Opción elegida: cargar_comandos" << endl;
                 cout << "Nombre de archivo: " << nombre_archivo << endl;
-            } else if (input.substr(0, 15) == "cargar_elementos") {
+            }//fin cargar_comandos
+             else if (input.substr(0, 15) == "cargar_elementos") {
                 string nombre_archivo = input.substr(16);
                 cout << "Opción elegida: cargar_elementos" << endl;
                 cout << "Nombre de archivo: " << nombre_archivo << endl;
-            } else {
+            }//fin cargar_elementos
+            
+             else {
                 cout << "Opción inválida" << endl;
             }
             break;
@@ -66,7 +69,9 @@ int main() {
                 cout << "Tipo de movimiento: " << tipo_movimiento << endl;
                 cout << "Magnitud: " << magnitud << endl;
                 cout << "Unidad de medida: " << unidad << endl;
-            }  else if (input.substr(0, 16) == "agregar_analisis") {
+            }//fin agregar_movimiento
+            
+              else if (input.substr(0, 16) == "agregar_analisis") {
                 char tipo_analisis = input[17];
                 char objeto_analisis = input[19];
                 string comentario = input.substr(input.find(" ", 20) + 1);
@@ -86,7 +91,9 @@ int main() {
                 cout << "Tipo de análisis: " << tipo_analisis << endl;
                 cout << "Objeto de análisis: " << objeto_analisis << endl;
                 cout << "Comentario: " << comentario << endl;
-            } else if (input == "agregar_elemento") {
+            }//fin agregar_análisis
+            
+             else if (input == "agregar_elemento") {
                 cout << "Opción elegida: agregar_elemento" << endl;
 
                 char tipo_componente;
@@ -118,7 +125,7 @@ int main() {
         cout << "Tipo de componente invalido, solo se acepta r para Roca, c para Crater, m para Monticulo y d para Duna" << endl;
     }
     
-            } 
+            }//Agregar_elemento 
             else if (input == "ayuda") {
                 
                 cout << "Comándos válidos :" << endl;
@@ -133,7 +140,8 @@ int main() {
                 
                 
 
-            } else {
+            }//cierre ayuda 
+            else {
                 cout << "Opción inválida" << endl;
             }
             break;
@@ -174,9 +182,10 @@ int main() {
         default:
             cout << "Tipo de archivo invalido, solo se aceptan s, e, a, m, c y l" << endl;
             break;
-    }
+    }//Cierre mini switch guardar
 
-            } else {
+            }//cierre if guardar
+             else {
                 cout << "input invalida" << endl;
             }
             break;
@@ -192,7 +201,8 @@ int main() {
             // simularComandos(x, y);
              break;
 
-            } else if (input == "salir") {
+            }//primer if simular_comandos
+             else if (input == "salir") {
                 cout << "input elegida: salir" << endl;
                 break;
             } else {
@@ -205,8 +215,8 @@ int main() {
     }
     if (input == "exit") {
       break;
-    }
+    }//Cierre exit
     
-  }
+  }//Cierre While
   return 0;
-}
+}//Cierre Main
