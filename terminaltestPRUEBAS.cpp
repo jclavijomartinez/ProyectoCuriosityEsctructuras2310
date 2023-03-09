@@ -3,6 +3,7 @@
 #include <sstream>
 #include "movimientos.h"
 #include "comandos.h"
+#include "analisis.h"
 
 using namespace std;
 
@@ -53,25 +54,9 @@ int main() {
             }//fin agregar_movimiento
             
               else if (input.substr(0, 16) == "agregar_analisis") {
-                char tipo_analisis = input[17];
-                char objeto_analisis = input[19];
-                string comentario = input.substr(input.find(" ", 20) + 1);
+                
+                agregar_analisis(input);
 
-                cout << "Opción elegida: agregar_analisis" << endl;
-
-                if (tipo_analisis != 'f' && tipo_analisis != 'c' && tipo_analisis != 'p') {
-                    cout << "Tipo de análisis inválido" << endl;
-                    break;
-                }
-
-                if (objeto_analisis != 'r' && objeto_analisis != 'a' && objeto_analisis != 'm') {
-                    cout << "Objeto de análisis inválido" << endl;
-                    break;
-                }
-
-                cout << "Tipo de análisis: " << tipo_analisis << endl;
-                cout << "Objeto de análisis: " << objeto_analisis << endl;
-                cout << "Comentario: " << comentario << endl;
             }//fin agregar_análisis
             
              else if (input == "agregar_elemento") {
