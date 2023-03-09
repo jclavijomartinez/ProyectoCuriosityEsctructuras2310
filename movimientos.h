@@ -7,7 +7,7 @@ struct Movimiento {
   char uniMed;  	
 };
 
-void agregar_movimiento ( ); //AGREGAR MOVIMIENTO
+void agregar_mov ( string ); //AGREGAR MOVIMIENTO
 
 
 #endif

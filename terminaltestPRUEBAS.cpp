@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+#include "movimientos.h"
 
 using namespace std;
 
@@ -45,30 +46,9 @@ int main() {
             break;
         case 'a':
              if (input.substr(0, 17) == "agregar_movimiento") {
-                char tipo_movimiento = input[18];
-                double magnitud = stod(input.substr(20, input.find(" ", 20) - 20));
-                char unidad = input[input.find(" ", 20) + 1];
+                
+                agregar_mov(input);
 
-                cout << "Opción elegida: agregar_movimiento" << endl;
-
-                if (tipo_movimiento != 'a' && tipo_movimiento != 'g') {
-                    cout << "Tipo de movimiento inválido" << endl;
-                    break;
-                }
-
-                if (magnitud <= 0 || magnitud > 100) {
-                    cout << "Magnitud inválida" << endl;
-                    break;
-                }
-
-                if (unidad != 'c' && unidad != 'm' && unidad != 'g') {
-                    cout << "Unidad de medida inválida" << endl;
-                    break;
-                }
-
-                cout << "Tipo de movimiento: " << tipo_movimiento << endl;
-                cout << "Magnitud: " << magnitud << endl;
-                cout << "Unidad de medida: " << unidad << endl;
             }//fin agregar_movimiento
             
               else if (input.substr(0, 16) == "agregar_analisis") {
