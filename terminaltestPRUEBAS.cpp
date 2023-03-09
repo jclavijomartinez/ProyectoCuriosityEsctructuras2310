@@ -3,6 +3,7 @@
 #include <sstream>
 #include "movimientos.h"
 
+
 using namespace std;
 
 constexpr unsigned int str2int(const char* str, int h = 0)
