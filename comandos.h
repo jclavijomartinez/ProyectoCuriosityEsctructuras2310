@@ -7,7 +7,7 @@ struct Comando {
   char uniMed;  	
 };
 
-void agregar_movimiento ( ); //AGREGAR MOVIMIENTO
+void cargar_comando ( string ); //AGREGAR MOVIMIENTO
 
 
 #endif

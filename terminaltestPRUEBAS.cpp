@@ -2,7 +2,7 @@
 #include <string>
 #include <sstream>
 #include "movimientos.h"
-
+#include "comandos.h"
 
 using namespace std;
 
@@ -31,9 +31,9 @@ int main() {
     switch (input[0]) {
         case 'c':
              if (input.substr(0, 14) == "cargar_comandos") {
-                string nombre_archivo = input.substr(15);
-                cout << "Opción elegida: cargar_comandos" << endl;
-                cout << "Nombre de archivo: " << nombre_archivo << endl;
+                
+                cargar_comando(input);
+
             }//fin cargar_comandos
              else if (input.substr(0, 15) == "cargar_elementos") {
                 string nombre_archivo = input.substr(16);
